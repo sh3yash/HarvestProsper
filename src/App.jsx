@@ -1,0 +1,50 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+import LoginPage from './pages/LoginPage';
+
+import ContactUsPage from './pages/ContactUsPage';
+import HomePage from './pages/HomePage';
+import TradingPlatform from './pages/TradingPlatform';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Consultation from './pages/Consultation';
+import AIChat from './pages/AIChat';
+import ConsultPage from './pages/ConsultPage';
+import AdvisorChat from './pages/AdvisorChat';
+
+import { ShootingStarsAndStarsBackgroundDemo } from './pages/ShootingStarsAndStarsBackgroundDemo';
+
+
+
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+
+          <Route path="/login" element={<LoginPage />} />
+
+
+          <Route path="/tradingplatform" element={<TradingPlatform />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route path="/consultation" element={<Consultation/>} />
+          <Route path="/aichat" element={<AIChat/>} />  
+          <Route path="/consultpage" element={<ConsultPage/>} />  
+          <Route path="/advisorchat" element={<AdvisorChat/>} />
+          <Route path="/starsdemo"  element={<ShootingStarsAndStarsBackgroundDemo/>}/>
+
+
+
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;

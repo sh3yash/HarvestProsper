@@ -1,0 +1,152 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;  /* Space between logo, links, and login */
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed; /* Fixed position */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+/* Logo size adjustment */
+.nav-logo img {
+  width: 80px; /* Adjust logo size if needed */
+  height: auto;
+}
+
+/* Pseudo-element for blurred background */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  backdrop-filter: blur(10px); /* Blur effect */
+  z-index: -1; /* Place behind other content */
+}
+
+/* Logo on the extreme left */
+.nav-logo {
+  flex: 1;
+}
+
+.nav-logo a {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px; /* Makes the logo text more spaced out */
+  transition: color 0.3s ease;
+}
+
+.nav-logo a:hover {
+  color: #FFD700; /* Hover color change for logo */
+}
+
+/* Centered navigation links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Increased space between links */
+  flex: 2;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 4px; /* Adds slight rounding to links */
+  transition: color 0.3s, background-color 0.3s ease; /* Smooth transitions */
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: aqua; /* Gold hover color */
+  background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background on hover */
+}
+
+/* Animated underline effect for links */
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: aqua;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%; /* Expands underline on hover */
+}
+
+/* Login button on the extreme right */
+.login-btn {
+  margin-left: auto; /* Pushes login to the extreme right */
+  margin-right: 15px; /* Right margin for spacing */
+  background-color: #28a745; /* Green background for the login button */
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded button for modern look */
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+}
+
+.login-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.login-btn:active {
+  transform: scale(0.98); /* Pressed effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .nav-toggle {
+    display: flex; /* Show toggle button on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .nav-links {
+    display: flex; /* Show links in vertical layout */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%;
+    gap: 10px; /* Space between links */
+  }
+
+  .nav-links a {
+    text-align: center; /* Center links */
+    width: 100%; /* Full width links */
+  }
+
+  .login-btn {
+    width: 100%; /* Full width for login button */
+    margin-right: 0; /* Remove right margin */
+  }
+}

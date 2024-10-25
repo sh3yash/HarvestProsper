@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles.css - Global Styles */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Makes width/height calculations easier */
+}
+
+html, body {
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  font-family: Arial, sans-serif; /* Use your preferred font */
+}
+
+/* Optional: Set a background color */
+body {
+  background-color: #f4f4f4; /* Light gray background */
+}

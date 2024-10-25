@@ -1,0 +1,93 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+  color: #fff;
+  padding: 20px 50px; /* Added padding for more spacing */
+  display: flex;
+  justify-content: space-between; /* Spread items across the full width */
+  align-items: flex-start; /* Align items at the top of the footer */
+  flex-wrap: wrap; /* Ensures responsive behavior on smaller screens */
+  width: 100%;
+}
+
+.footer-content,
+.footer-links,
+.footer-address {
+  flex: 1; /* Each section takes equal space */
+  margin: 10px;
+}
+
+/* Align each section to the left for better layout */
+.footer-content {
+  text-align: left;
+}
+
+.footer-address {
+  text-align: left;
+}
+
+.footer-links {
+  text-align: center; /* Center social icons in their section */
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #1eb689; /* Gold color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #fff; /* White color on hover */
+}
+
+.footer-links h4,
+.footer-address h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Slightly larger font for section titles */
+}
+
+.footer-links .social-icons {
+  display: flex;
+  justify-content: center; /* Center social icons within their section */
+  gap: 15px; /* Spacing between social icons */
+}
+
+.footer-links a {
+  font-size: 1.5rem; /* Size for social media icons */
+  color: #29ceaa; /* Icon color */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff; /* Icon hover color */
+}
+
+.footer-address p {
+  margin: 5px 0; /* Consistent spacing for address lines */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    text-align: center;
+  }
+
+  .footer-content,
+  .footer-links,
+  .footer-address {
+    text-align: center; /* Center everything on small screens */
+  }
+
+  .footer-content p,
+  .footer-address p {
+    font-size: 0.9rem; /* Smaller font size on mobile */
+  }
+
+  .footer-links h4 {
+    font-size: 1rem; /* Smaller title size on mobile */
+  }
+}
