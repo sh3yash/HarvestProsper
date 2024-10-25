@@ -22,49 +22,49 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-page">
+    <div className="contact-page-container">
       {/* Find Us Section */}
-      <div className="find-us-section">
-        <h2>Find Us</h2>
-        <div className="find-us-cards">
-          <div className="card">
+      <div className="find-us-container">
+        <h2 className="section-heading">Find Us</h2>
+        <div className="card-group">
+          <div className="info-card">
             <img src={locationimg} alt="Location" className="card-image" />
-            <FaMapMarkerAlt className="icon" />
-            <h3>Our Location</h3>
-            <p>
+            <FaMapMarkerAlt className="card-icon" />
+            <h3 className="card-title">Our Location</h3>
+            <p className="card-description">
               {isExpanded.location
                 ? '1234 Farm Street, Rural City, Country. We are located in the heart of the agricultural district, accessible to all major farming regions...'
                 : '1234 Farm Street, Rural City, Country.'}
             </p>
-            <button className="read-more-btn" onClick={() => handleReadMore('location')}>
+            <button className="toggle-button" onClick={() => handleReadMore('location')}>
               {isExpanded.location ? 'Show Less' : 'Read More'}
             </button>
           </div>
 
-          <div className="card">
+          <div className="info-card">
             <img src={callimg} alt="Phone" className="card-image" />
-            <FaPhoneAlt className="icon" />
-            <h3>Call Us</h3>
-            <p>
+            <FaPhoneAlt className="card-icon" />
+            <h3 className="card-title">Call Us</h3>
+            <p className="card-description">
               {isExpanded.phone
                 ? 'You can reach us at +123 456 7890 from Monday to Friday, 9 AM to 6 PM. Our customer support team is here to assist you with any queries you may have...'
                 : '+123 456 7890.'}
             </p>
-            <button className="read-more-btn" onClick={() => handleReadMore('phone')}>
+            <button className="toggle-button" onClick={() => handleReadMore('phone')}>
               {isExpanded.phone ? 'Show Less' : 'Read More'}
             </button>
           </div>
 
-          <div className="card">
+          <div className="info-card">
             <img src={emailimg} alt="Email" className="card-image" />
-            <FaEnvelope className="icon" />
-            <h3>Email Us</h3>
-            <p>
+            <FaEnvelope className="card-icon" />
+            <h3 className="card-title">Email Us</h3>
+            <p className="card-description">
               {isExpanded.email
                 ? 'Feel free to email us at contact@agrifinance.com. We respond to all emails within 24 hours. For urgent inquiries, please call our customer support...'
                 : 'contact@agrifinance.com.'}
             </p>
-            <button className="read-more-btn" onClick={() => handleReadMore('email')}>
+            <button className="toggle-button" onClick={() => handleReadMore('email')}>
               {isExpanded.email ? 'Show Less' : 'Read More'}
             </button>
           </div>
@@ -72,28 +72,28 @@ const ContactUs = () => {
       </div>
 
       {/* Get in Touch Section */}
-      <div className="get-in-touch-section">
-        <h2>Get in Touch</h2>
+      <div className="contact-form-container">
+        <h2 className="section-heading">Get in Touch</h2>
         <form className="contact-form">
-          <div className="form-group">
+          <div className="form-field">
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" placeholder="Enter your name" />
           </div>
-          <div className="form-group">
+          <div className="form-field">
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" placeholder="Enter your email" />
           </div>
-          <div className="form-group">
+          <div className="form-field">
             <label htmlFor="message">Message:</label>
             <textarea id="message" rows="5" placeholder="Enter your message"></textarea>
           </div>
-          <button type="submit" className="submit-btn">Submit</button>
+          <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>
 
       {/* Map Section */}
-      <div className="map-section">
-        <h2>Our Location on Map</h2>
+      <div className="map-container">
+        <h2 className="section-heading">Our Location on Map</h2>
         <Map />
       </div>
     </div>

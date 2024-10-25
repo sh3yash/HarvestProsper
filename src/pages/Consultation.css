@@ -1,147 +1,106 @@
-/* General page styling */
-.consultation-page {
-  padding: 20px;
-  color: #e0e0e0;
-  font-family: 'Arial', sans-serif;
-  background-color: #1e1e1e;
+/* Overall Page Styles */
+.consultation-container {
+  background-color: #000000; /* Black background */
+  color: #e0e0e0; /* Light text color */
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
-/* Section title styling */
-h2 {
-  color: #1e9a94;
-  margin-bottom: 20px;
-  text-align: center;
+/* Section Titles */
+.consultation-container h2 {
   font-size: 2rem;
+  color: #03dac6; /* Teal color for headings */
+  margin-bottom: 20px;
 }
 
-/* Factors of Credit Score Evaluation - Card Styling */
-.factor-cards {
+/* Credit Score Evaluation Section */
+.credit-score-section {
+  margin-bottom: 40px;
+}
+
+/* Credit Factor Cards */
+.credit-factor-cards {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
+}
+
+.credit-factor-card {
+  background-color: #000000; /* Black background for cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* White shadow for separation */
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.credit-factor-card h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.credit-factor-card p {
+  color: #cccccc; /* Light grey for card text */
+}
+
+/* Hover Effect for Cards */
+.credit-factor-card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3); /* Brighter shadow on hover */
+}
+
+/* Loan Application Section */
+.loan-application-section {
+  background-color: #000000;
+}
+
+.loan-application-form {
+  background-color: #000000; /* Black background for form */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* White shadow for form separation */
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.factor-card {
-  background-color: #000000;
-  color: #eaeaea;
-  padding: 20px;
-  border-radius: 10px;
-  width: 32%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+.form-item {
+  margin-bottom: 20px;
 }
 
-.factor-card h3 {
-  margin-bottom: 15px;
+.loan-application-form label {
+  font-size: 1rem;
+  color: #bbbbbb; /* Grey for form labels */
+  display: block;
+  margin-bottom: 5px;
 }
 
-.factor-card p {
-  color: #c0c0c0;
-}
-
-.factor-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-}
-
-/* Apply for a Loan Section */
-.apply-loan {
-  margin-top: 40px;
-  padding: 30px;
-  background-color: #2b2b2b;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.apply-loan h2 {
-  font-size: 2rem;
-  color: #f1f1f1;
-  margin-bottom: 30px;
-}
-
-.loan-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-label {
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #e0e0e0;
-  font-size: 1.1rem;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="file"] {
-  padding: 12px 15px;
-  border-radius: 5px;
-  background-color: #3a3a3a;
-  color: #e0e0e0;
-  border: 1px solid #444;
+.loan-application-form input[type="number"],
+.loan-application-form input[type="text"],
+.loan-application-form input[type="file"] {
   width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1a1a1a; /* Dark black input field */
+  color: #ffffff; /* White text for inputs */
+  border: 1px solid #444444; /* Dark grey border */
   font-size: 1rem;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="file"]:focus {
-  outline: none;
-  border-color: #00aaff;
-  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
-}
-
-.submit-btn {
-  background-color: #00aaff;
-  color: #ffffff;
-  padding: 12px 20px;
+/* Submit Button */
+.loan-submit-button {
+  background-color: #03dac6; /* Teal button */
+  color: #121212; /* Dark text on button */
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
   font-size: 1.2rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   width: 100%;
-  max-width: 200px;
-  align-self: center;
 }
 
-.submit-btn:hover {
-  background-color: #007acc;
-  box-shadow: 0 4px 15px rgba(0, 122, 204, 0.5);
-}
-
-/* Responsive design */
-@media (max-width: 900px) {
-  .factor-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .factor-card {
-    width: 100%;
-  }
-
-  .apply-loan {
-    padding: 20px;
-  }
-
-  .loan-form {
-    gap: 15px;
-  }
-
-  .submit-btn {
-    width: 100%;
-  }
+.loan-submit-button:hover {
+  background-color: #018786; /* Darker teal on hover */
+  transform: scale(1.05); /* Slight scale up on hover */
 }

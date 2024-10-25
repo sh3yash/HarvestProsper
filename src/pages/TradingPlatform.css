@@ -1,6 +1,6 @@
 /* General styles */
 body {
-  background-color: #1e1e1e; /* Dark background */
+  background-color: #121212; /* Darker background for better contrast */
   color: #e0e0e0; /* Light grey text */
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -10,14 +10,16 @@ body {
 .marketplace {
   padding: 20px;
   text-align: center;
-  background-color: rgb(40, 35, 35);
+  background-color: #1e1e1e; /* Slightly lighter background for marketplace section */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Shadow for separation */
 }
 
 h1 {
   color: #3775a5; /* Light text for headers */
 }
 
-#trader-heading{
+#trader-heading {
   color: #1092a3;
 }
 
@@ -62,13 +64,13 @@ h2 {
   background-color: #2b2b2b; /* Dark card background */
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for product cards */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
 }
 
 .product-card img {
@@ -111,6 +113,7 @@ h2 {
   padding: 20px;
   margin-top: 40px;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for Join Marketplace section */
 }
 
 .join-marketplace form {
@@ -143,6 +146,7 @@ h2 {
   background-color: #007acc; /* Darker sky blue on hover */
 }
 
+/* Responsive Styles */
 @media (max-width: 600px) {
   .category-switch button {
     margin-bottom: 10px;
