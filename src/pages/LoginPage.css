@@ -1,115 +1,115 @@
-/* Container for the entire page */
-.login-page-container {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../assets/images/login.jpg'); /* Use your actual image path */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  /* Only blur the area behind the login card */
-  .login-page-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
-  
-  /* Transparent login card */
-  .login-page {
-    position: relative;
-    z-index: 2; /* Higher than the blurred background */
-    background-color: transparent; /* No background color */
-    border-radius: 8px;
-    max-width: 400px;
-    padding: 40px 20px;
-    margin: 50px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow to distinguish the card */
-    backdrop-filter: blur(10px); /* Add slight blur to the card for glassmorphism */
-  }
-  
-  /* Blur only behind the login card */
-  .login-page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    background-size: cover;
-    background-position: center;
-    filter: blur(10px); /* Blurs only behind the card */
-    z-index: -1; /* Places the blur behind the card */
-    border-radius: inherit;
-  }
-  
-  /* Form and text styling remains the same */
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  .user-selection {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .user-btn {
-    padding: 10px 20px;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .user-btn.active {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .user-btn:hover {
-    background-color: #d4d4d4;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-btn {
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .login-btn:hover {
-    background-color: #218838;
+/* Main container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+  padding: 20px;
+  font-family: 'Arial', sans-serif; /* Font family */
+}
+
+/* Title styling */
+.login-title {
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: 700; /* Bold weight */
+  color: #00ffcc; /* Neon teal color for title */
+  text-shadow: 0 0 20px rgba(0, 255, 204, 0.8); /* Glowing effect */
+  letter-spacing: 2px; /* Spacing between letters */
+}
+
+/* Form styling */
+.login-form {
+  background: rgba(0, 0, 0, 0.9); /* Black background with slight transparency */
+  padding: 30px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(0, 255, 204, 0.5); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px; /* Maximum width for the form */
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff; /* White label text */
+  font-size: 1.1rem; /* Slightly larger font size for labels */
+  letter-spacing: 1px; /* Space between letters */
+}
+
+/* Input styling */
+.form-group input {
+  width: 100%; /* Full width for input fields */
+  padding: 12px;
+  border: 2px solid rgba(0, 255, 204, 0.5); /* Border with neon teal color */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background for input */
+  color: #fff; /* White text for input */
+  box-shadow: 0 2px 10px rgba(0, 255, 204, 0.5); /* Shadow for input fields */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  outline: none; /* Remove default outline */
+}
+
+/* Input focus effect */
+.form-group input:focus {
+  background-color: rgba(0, 255, 204, 0.5); /* Neon teal background on focus */
+  transform: scale(1.02); /* Slight zoom effect */
+  border-color: #00ffcc; /* Change border color to neon teal on focus */
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.8); /* Enhanced glow effect on focus */
+}
+
+/* Button styling */
+.login-button {
+  width: 100%; /* Full width for button */
+  padding: 12px;
+  border: none;
+  border-radius: 6px; /* Rounded corners */
+  background-color: #00ccff; /* Neon blue background */
+  color: #fff; /* White text */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  box-shadow: 0 4px 20px rgba(0, 204, 255, 0.5); /* Shadow for depth */
+}
+
+/* Button hover effect */
+.login-button:hover {
+  background-color: #0099cc; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Sign-up link styling */
+.signup-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #00ffcc; /* Neon teal text for the signup link */
+}
+
+.signup-link a {
+  color: #00ffcc; /* Neon teal */
+  text-decoration: none; /* No underline */
+  transition: text-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+.signup-link a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.8); /* Glowing effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-title {
+    font-size: 2rem; /* Smaller title on mobile */
   }
 
-  #username{
-    background-color: white;
-    border-width: 0px;
+  .login-form {
+    padding: 20px; /* Less padding on mobile */
   }
-  
+}

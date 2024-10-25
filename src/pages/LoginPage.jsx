@@ -1,65 +1,45 @@
-import React, { useState } from "react";
-import "./LoginPage.css";
+import React, { useState } from 'react';
+import './LoginPage.css'; // Import your updated CSS file
 
 const LoginPage = () => {
-  const [userType, setUserType] = useState("farmer"); // Default user type is farmer
-  const [credentials, setCredentials] = useState({ username: "", password: "" });
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleInputChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    if (userType === "farmer") {
-      console.log("Logging in as Farmer");
-    } else {
-      console.log("Logging in as Financial Institution");
-    }
+    // Handle login logic here
+    console.log('Login:', { username, password });
   };
 
   return (
-    <div className="login-page-container">
-      <div className="login-page">
-        <h2>Login</h2>
-        <div className="user-selection">
-          <button
-            className={`user-btn ${userType === "farmer" ? "active" : ""}`}
-            onClick={() => setUserType("farmer")}
-          >
-            Login as Farmer
-          </button>
-          <button
-            className={`user-btn ${userType === "institution" ? "active" : ""}`}
-            onClick={() => setUserType("institution")}
-          >
-            Login as Financial Institution
-          </button>
-        </div>
-        <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <h2 className="login-title">Login</h2>
+      <form className="login-form" onSubmit={handleLogin}>
+        <div className="form-group">
           <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
-            name="username"
-            value={credentials.username}
-            onChange={handleInputChange}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
+        </div>
+        <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleInputChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit" className="login-btn">
-            {userType === "farmer" ? "Login as Farmer" : "Login as Financial Institution"}
-          </button>
-        </form>
-      </div>
+        </div>
+        <button type="submit" className="login-button">Login</button>
+      </form>
+      <p className="signup-link">
+        Don't have an account? <a href="/signup">Sign Up</a>
+      </p>
     </div>
   );
 };

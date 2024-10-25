@@ -17,6 +17,7 @@ import { ShootingStars } from "./components/ui/shooting-stars";
 import { StarsBackground } from "./components/ui/stars-background";
 import Loans from "./pages/Loans";
 import Finance from "./pages/Finance";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/advisorchat" element={<AdvisorChat />} />
             <Route path="/loan" element={<Loans/>} />
             <Route path="/finances" element={<Finance/>} />
+            <Route path="/signup" element={<SignupPage/>}/>
           </Routes>
           <Footer />
         </div>
