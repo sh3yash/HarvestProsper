@@ -5,6 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope } from 'reac
 const Footer = () => {
   return (
     <footer className="footer">
+      <div className="footer-shadow"></div> {/* Shadow line added here */}
       <div className="footer-content">
         <p>© 2024 Agri-Finance Platform. All Rights Reserved.</p>
         <p>

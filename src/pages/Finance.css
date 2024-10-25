@@ -1,0 +1,62 @@
+.finance-container {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark transparent background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: white; /* Text color for readability */
+}
+
+.finance-heading {
+    margin-bottom: 20px;
+    color: rgb(30, 160, 171); /* Color for headings */
+    text-align: center; /* Center the heading */
+    font-size: 2rem; /* Increased font size */
+    text-transform: uppercase; /* Uppercase letters for emphasis */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+.finance-info {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark gray for card background */
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.2); /* Light shadow for contrast */
+}
+
+.finance-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.finance-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker gray for each plan item */
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.2); /* Light shadow for each plan item */
+    transition: box-shadow 0.3s, transform 0.3s; /* Added transform for smooth effect */
+}
+
+.finance-item:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); /* Lighter shadow on hover */
+    transform: translateY(-3px); /* Slightly move the card up on hover */
+}
+
+.finance-item h4 {
+    margin: 0 0 10px 0;
+    color: #ffffff; /* White color for plan item headings */
+}
+
+.apply-button {
+    background-color: rgb(30, 160, 171); /* Color for apply button */
+    color: white; /* Text color for button */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.apply-button:hover {
+    background-color: rgb(20, 130, 140); /* Darker shade on hover */
+}

@@ -1,0 +1,65 @@
+.loans-container {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark transparent background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: white; /* Text color for readability */
+}
+
+.loans-heading {
+    margin-bottom: 20px;
+    color: rgb(30, 160, 171); /* Color for headings */
+    text-align: center; /* Center the heading */
+    font-size: 2rem; /* Increased font size */
+    text-transform: uppercase; /* Uppercase letters for emphasis */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+.loan-info {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark gray for card background */
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.2); /* Light shadow for contrast */
+}
+
+.loan-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.loan-item {
+    display: flex; /* Flexbox for aligning elements */
+    justify-content: space-between; /* Space between details and button */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker gray for each loan item */
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.2); /* Light shadow for each loan item */
+    transition: box-shadow 0.3s, transform 0.3s; /* Added transform for smooth effect */
+}
+
+.loan-item:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); /* Lighter shadow on hover */
+    transform: translateY(-3px); /* Slightly move the card up on hover */
+}
+
+.loan-item h4 {
+    margin: 0 0 10px 0;
+    color: #ffffff; /* White color for loan item headings */
+}
+
+.apply-button {
+    padding: 10px 15px; /* Button padding */
+    background-color: rgb(30, 160, 171); /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.apply-button:hover {
+    background-color: rgb(20, 130, 140); /* Darker color on hover */
+}

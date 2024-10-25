@@ -37,7 +37,7 @@ function App() {
             <Route path="/aichat" element={<AIChat />} />
             <Route path="/consultpage" element={<ConsultPage />} />
             <Route path="/advisorchat" element={<AdvisorChat />} />
-            <Route path="/loans" element={<Loans/>} />
+            <Route path="/loan" element={<Loans/>} />
             <Route path="/finances" element={<Finance/>} />
           </Routes>
           <Footer />

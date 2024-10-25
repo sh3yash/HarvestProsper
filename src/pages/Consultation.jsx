@@ -34,7 +34,7 @@ const Consultation = () => {
     e.preventDefault();
     setLoanSubmitted(true);
     // Navigate to Loans page or you can use Link below for better UX
-    navigate('/loans', { state: { loanInfo } });
+    navigate('/loan', { state: { loanInfo } });
   };
 
   const handleFinanceSubmit = (e) => {
@@ -110,7 +110,7 @@ const Consultation = () => {
             {loanSubmitted && (
               <p>
                 Loan application submitted! 
-                <Link to="/loans"> Click here to check available loans.</Link>
+                <Link to="/loan"> Click here to check available loans.</Link>
               </p>
             )}
           </div>
