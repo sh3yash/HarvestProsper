@@ -1,10 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './Consultation.css';
 
 const Consultation = () => {
+  const [loanInfo, setLoanInfo] = useState({
+    name: '',
+    landSize: '',
+    income: '',
+  });
+
+  const [financeInfo, setFinanceInfo] = useState({
+    name: '',
+    farmType: '',
+    income: '',
+  });
+
+  const [loanSubmitted, setLoanSubmitted] = useState(false);
+  const [financeSubmitted, setFinanceSubmitted] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLoanChange = (e) => {
+    const { name, value } = e.target;
+    setLoanInfo({ ...loanInfo, [name]: value });
+  };
+
+  const handleFinanceChange = (e) => {
+    const { name, value } = e.target;
+    setFinanceInfo({ ...financeInfo, [name]: value });
+  };
+
+  const handleLoanSubmit = (e) => {
+    e.preventDefault();
+    setLoanSubmitted(true);
+    // Navigate to Loans page or you can use Link below for better UX
+    navigate('/loans', { state: { loanInfo } });
+  };
+
+  const handleFinanceSubmit = (e) => {
+    e.preventDefault();
+    setFinanceSubmitted(true);
+    // Navigate to Finance page or you can use Link below for better UX
+    navigate('/finances', { state: { financeInfo } });
+  };
+
   return (
     <div className="consultation-container">
-      {/* Factors of Credit Score Evaluation */}
       <section className="credit-score-section">
         <h2>Factors of Credit Score Evaluation</h2>
         <div className="credit-factor-cards">
@@ -23,33 +64,107 @@ const Consultation = () => {
         </div>
       </section>
 
-      {/* Apply for a Loan Section */}
-      <section className="loan-application-section">
-        <h2>Apply for a Loan</h2>
-        <form className="loan-application-form">
-          <div className="form-item">
-            <label htmlFor="loanAmount">Loan Amount</label>
-            <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter loan amount" required />
+      <div className="forms-container">
+        <div className="form-card">
+          <div className="form-section">
+            <h2>Check for Loan</h2>
+            <form className="loan-check-form" onSubmit={handleLoanSubmit}>
+              <div className="form-item">
+                <label htmlFor="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={loanInfo.name}
+                  onChange={handleLoanChange}
+                  required
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="landSize">Land Size (in acres)</label>
+                <input
+                  type="number"
+                  id="landSize"
+                  name="landSize"
+                  placeholder="Enter land size"
+                  value={loanInfo.landSize}
+                  onChange={handleLoanChange}
+                  required
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="income">Family Income</label>
+                <input
+                  type="number"
+                  id="income"
+                  name="income"
+                  placeholder="Enter family income"
+                  value={loanInfo.income}
+                  onChange={handleLoanChange}
+                  required
+                />
+              </div>
+              <button type="submit" className="loan-submit-button">Check Available Loans</button>
+            </form>
+            {loanSubmitted && (
+              <p>
+                Loan application submitted! 
+                <Link to="/loans"> Click here to check available loans.</Link>
+              </p>
+            )}
           </div>
-          <div className="form-item">
-            <label htmlFor="loanPurpose">Purpose of Loan</label>
-            <input type="text" id="loanPurpose" name="loanPurpose" placeholder="e.g., Agricultural expansion" required />
+
+          <div className="form-section">
+            <h2>Check Finance Facilities</h2>
+            <form className="finance-check-form" onSubmit={handleFinanceSubmit}>
+              <div className="form-item">
+                <label htmlFor="financeName">Your Name</label>
+                <input
+                  type="text"
+                  id="financeName"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={financeInfo.name}
+                  onChange={handleFinanceChange}
+                  required
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="farmType">Type of Farm</label>
+                <input
+                  type="text"
+                  id="farmType"
+                  name="farmType"
+                  placeholder="e.g., Dairy, Crop, etc."
+                  value={financeInfo.farmType}
+                  onChange={handleFinanceChange}
+                  required
+                />
+              </div>
+              <div className="form-item">
+                <label htmlFor="financeIncome">Family Income</label>
+                <input
+                  type="number"
+                  id="financeIncome"
+                  name="income"
+                  placeholder="Enter family income"
+                  value={financeInfo.income}
+                  onChange={handleFinanceChange}
+                  required
+                />
+              </div>
+              <button type="submit" className="finance-submit-button">Check Finance Options</button>
+            </form>
+            {financeSubmitted && (
+              <p>
+                Finance application submitted! 
+                <Link to="/finances"> Click here to check finance options.</Link>
+              </p>
+            )}
           </div>
-          <div className="form-item">
-            <label htmlFor="landOwnership">Land Ownership Proof</label>
-            <input type="file" id="landOwnership" name="landOwnership" required />
-          </div>
-          <div className="form-item">
-            <label htmlFor="incomeProof">Income Proof</label>
-            <input type="file" id="incomeProof" name="incomeProof" required />
-          </div>
-          <div className="form-item">
-            <label htmlFor="loanDuration">Loan Duration (Years)</label>
-            <input type="number" id="loanDuration" name="loanDuration" placeholder="Enter duration" required />
-          </div>
-          <button type="submit" className="loan-submit-button">Submit Loan Application</button>
-        </form>
-      </section>
+        </div>
+      </div>
     </div>
   );
 };

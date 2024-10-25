@@ -1,24 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-import LoginPage from './pages/LoginPage';
+import LoginPage from "./pages/LoginPage";
 
-import ContactUsPage from './pages/ContactUsPage';
-import HomePage from './pages/HomePage';
-import TradingPlatform from './pages/TradingPlatform';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Consultation from './pages/Consultation';
-import AIChat from './pages/AIChat';
-import ConsultPage from './pages/ConsultPage';
-import AdvisorChat from './pages/AdvisorChat';
-import { ShootingStars } from './components/ui/shooting-stars';
-import { StarsBackground } from './components/ui/stars-background';
-
-
-
-
+import ContactUsPage from "./pages/ContactUsPage";
+import HomePage from "./pages/HomePage";
+import TradingPlatform from "./pages/TradingPlatform";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Consultation from "./pages/Consultation";
+import AIChat from "./pages/AIChat";
+import ConsultPage from "./pages/ConsultPage";
+import AdvisorChat from "./pages/AdvisorChat";
+import { ShootingStars } from "./components/ui/shooting-stars";
+import { StarsBackground } from "./components/ui/stars-background";
+import Loans from "./pages/Loans";
+import Finance from "./pages/Finance";
 
 function App() {
   return (
@@ -26,26 +24,24 @@ function App() {
       <div className="relative min-h-screen overflow-hidden bg-neutral-900">
         <ShootingStars />
         <StarsBackground />
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
 
-          <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage />} />
 
-
-          <Route path="/tradingplatform" element={<TradingPlatform />} />
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/consultation" element={<Consultation/>} />
-          <Route path="/aichat" element={<AIChat/>} />  
-          <Route path="/consultpage" element={<ConsultPage/>} />  
-          <Route path="/advisorchat" element={<AdvisorChat/>} />
-
-
-
-        </Routes>
-        <Footer />
-      </div>
+            <Route path="/tradingplatform" element={<TradingPlatform />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/consultation" element={<Consultation />} />
+            <Route path="/aichat" element={<AIChat />} />
+            <Route path="/consultpage" element={<ConsultPage />} />
+            <Route path="/advisorchat" element={<AdvisorChat />} />
+            <Route path="/loans" element={<Loans/>} />
+            <Route path="/finances" element={<Finance/>} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
     </Router>
   );

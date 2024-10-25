@@ -1,37 +1,8 @@
 import React, { useState } from 'react';
-import styled, { keyframes, ThemeProvider } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useSpring, animated } from 'react-spring';
-import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 import { chatSession } from '../utils/geminiutil';
-
-// Light and Dark theme definitions
-const lightTheme = {
-  background: '#f9f9f9',
-  text: '#333',
-  navbar: '#333',
-  navbarText: '#fff',
-  messageBackground: '#fff',
-  userMessageBackground: '#e1ffc7',
-  inputBackground: '#fff',
-  inputText: '#333',
-  buttonBackground: '#28a745',
-  buttonText: '#fff',
-  buttonHoverBackground: '#218838',
-};
-
-const darkTheme = {
-  background: '#2d2d2d',
-  text: '#fff',
-  navbar: '#444',
-  navbarText: '#fff',
-  messageBackground: '#333',
-  userMessageBackground: '#3c4e59',
-  inputBackground: '#333',
-  inputText: '#fff',
-  buttonBackground: '#666',
-  buttonText: '#fff',
-  buttonHoverBackground: '#777',
-};
+import Spline from '@splinetool/react-spline';
 
 const fadeIn = keyframes`
   from {
@@ -47,8 +18,10 @@ const ChatContainer = styled(animated.div)`
   flex-direction: column;
   height: calc(100vh - 50px);
   padding: 20px;
-  background: ${props => props.theme.background};
+  background: transparent;
   animation: ${fadeIn} 1s ease-out;
+  position: relative;
+  z-index: 1;
 `;
 
 const Header = styled.div`
@@ -57,30 +30,32 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
-  color: ${props => props.theme.text};
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 `;
 
 const Description = styled.p`
   font-size: 1.2em;
-  color: ${props => props.theme.text};
+  color: #fff;
 `;
 
 const MessagesContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 10px;
-  background: ${props => props.theme.messageBackground};
+  background: transparent;
   border-radius: 10px;
 `;
 
 const Message = styled.div`
   margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  color: ${props => props.theme.text};
-  background: ${props => (props.isUser ? props.theme.userMessageBackground : props.theme.messageBackground)};
-  align-self: ${props => (props.isUser ? 'flex-end' : 'flex-start')};
+  padding: 0; /* Remove padding */
+  color: #00bcd4; /* Light blue color for the text */
 `;
 
 const InputContainer = styled.div`
@@ -93,8 +68,8 @@ const Input = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background: ${props => props.theme.inputBackground};
-  color: ${props => props.theme.inputText};
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
 `;
 
 const Button = styled.button`
@@ -102,12 +77,15 @@ const Button = styled.button`
   margin-left: 10px;
   border: none;
   border-radius: 5px;
-  background: ${props => props.theme.buttonBackground};
-  color: ${props => props.theme.buttonText};
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #fff;
   cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
 
   &:hover {
-    background: ${props => props.theme.buttonHoverBackground};
+    background: linear-gradient(90deg, #e52e71, #ff8a00);
   }
 `;
 
@@ -118,11 +96,6 @@ const AIChat = ({ isUser, text }) => (
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [theme, setTheme] = useState(lightTheme);
-
-  const handleThemeToggle = () => {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme);
-  };
 
   const handleSend = async () => {
     if (input.trim()) {
@@ -136,12 +109,18 @@ const ChatComponent = () => {
 
         const result = await chatSession.sendMessage(modifiedInput);
         const ans = result.response.text();
-        
+
         setMessages([...newMessages, { text: ans, isUser: false }]);
       } catch (error) {
         console.error("Error sending message:", error);
         setMessages([...newMessages, { text: "Error sending message", isUser: false }]);
       }
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSend();
     }
   };
 
@@ -151,7 +130,11 @@ const ChatComponent = () => {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
+      <Spline
+        scene="https://prod.spline.design/alEU9ank5gZUHys8/scene.splinecode"
+        style={{ position: 'absolute', width: '100%', height: '80%', zIndex: 0, pointerEvents: 'auto' }}
+      />
       <ChatContainer style={animationProps}>
         <Header>
           <Title>Agriculture Finance Advisor</Title>
@@ -166,15 +149,13 @@ const ChatComponent = () => {
           <Input
             value={input}
             onChange={e => setInput(e.target.value)}
+            onKeyPress={handleKeyPress}
             placeholder="Type your message..."
           />
           <Button onClick={handleSend}>Send</Button>
         </InputContainer>
-        <Button onClick={handleThemeToggle}>
-          {theme === lightTheme ? <BsToggle2Off /> : <BsToggle2On />}
-        </Button>
       </ChatContainer>
-    </ThemeProvider>
+    </>
   );
 };
 

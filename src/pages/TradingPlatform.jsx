@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 
+
 const products = {
   vegetables: [
-    { name: 'Carrot', description: 'Fresh and organic carrots.', image: 'carrot.jpg', price: '$3.50/kg' },
-    { name: 'Potato', description: 'High-quality potatoes.', image: 'potato.jpg', price: '$1.20/kg' },
+    { name: 'Carrot', description: 'Fresh and organic carrots.', image: '/images/carrot.jpg', price: '$3.50/kg' },
+    { name: 'Potato', description: 'High-quality potatoes.', image: '/images/carrot.jpg', price: '$1.20/kg' },
   ],
   fruits: [
-    { name: 'Apple', description: 'Juicy and delicious apples.', image: 'apple.jpg', price: '$2.00/kg' },
-    { name: 'Banana', description: 'Ripe bananas full of energy.', image: 'banana.jpg', price: '$1.50/kg' },
+    { name: 'Apple', description: 'Juicy and delicious apples.', image: '/images/carrot.jpg', price: '$2.00/kg' },
+    { name: 'Banana', description: 'Ripe bananas full of energy.', image: '/images/carrot.jpg', price: '$1.50/kg' },
   ],
   seeds: [
-    { name: 'Sunflower Seeds', description: 'Perfect for snacking.', image: 'sunflower-seeds.jpg', price: '$5.00/kg' },
-    { name: 'Pumpkin Seeds', description: 'Rich in nutrients.', image: 'pumpkin-seeds.jpg', price: '$4.00/kg' },
-  ]
+    { name: 'Sunflower Seeds', description: 'Perfect for snacking.', image: '/images/carrot.jpg', price: '$5.00/kg' },
+    { name: 'Pumpkin Seeds', description: 'Rich in nutrients.', image: '/images/carrot.jpg', price: '$4.00/kg' },
+  ],
 };
+
 
 const TradingPlatform = () => {
   const [category, setCategory] = useState('vegetables');

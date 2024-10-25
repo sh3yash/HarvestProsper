@@ -57,34 +57,44 @@
   box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3); /* Brighter shadow on hover */
 }
 
-/* Loan Application Section */
-.loan-application-section {
-  background-color: #000000;
+/* Forms Container */
+.forms-container {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Align forms side by side */
+  margin-top: 20px; /* Space above forms */
 }
 
-.loan-application-form {
-  background-color: black; /* Dark grey background for form */
-  padding: 30px;
+/* Form Cards */
+.form-card {
+  display: flex; /* Flexbox for individual forms */
+  justify-content: space-between; /* Align forms within card */
+  width: 100%; /* Full width */
+}
+
+/* Form Section */
+.form-section {
+  background-color: transparent; /* No background color */
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* White shadow for form separation */
-  max-width: 600px;
-  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Box shadow */
+  flex: 1; /* Flex property for equal width */
+  margin: 0 10px; /* Space between forms */
 }
 
+/* Form Item */
 .form-item {
   margin-bottom: 20px;
 }
 
-.loan-application-form label {
+.form-section label {
   font-size: 1rem;
   color: #bbbbbb; /* Grey for form labels */
   display: block;
   margin-bottom: 5px;
 }
 
-.loan-application-form input[type="number"],
-.loan-application-form input[type="text"],
-.loan-application-form input[type="file"] {
+.form-section input[type="number"],
+.form-section input[type="text"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -95,19 +105,21 @@
 }
 
 /* Submit Button */
-.loan-submit-button {
-  background-color: #03dac6; /* Teal button */
-  color: #121212; /* Dark text on button */
-  padding: 10px 20px;
+.loan-submit-button,
+.finance-submit-button {
+  background-color: #03dac6; /* Teal background */
+  color: #000000; /* Black text */
   border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
+  padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s; /* Button transition */
+  width: 100%; /* Full width button */
 }
 
-.loan-submit-button:hover {
-  background-color: #018786; /* Darker teal on hover */
-  transform: scale(1.05); /* Slight scale up on hover */
+.loan-submit-button:hover,
+.finance-submit-button:hover {
+  background-color: #00b09b; /* Darker teal on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
 }

@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import './HomePage.css';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link for routing
 import AdvisorChat from './AdvisorChat';
-import AIChat from './AIChat';
 import Spline from '@splinetool/react-spline';
-import { ShootingStars } from '../components/ui/shooting-stars'; // Import ShootingStars
-import { StarsBackground } from '../components/ui/stars-background'; // Import StarsBackground
+import { ShootingStars } from '../components/ui/shooting-stars';
+import { StarsBackground } from '../components/ui/stars-background';
 
 const HomePage = () => {
   const [showAdvisorChat, setShowAdvisorChat] = useState(false);
-  const [showAIChat, setShowAIChat] = useState(false);
 
   const openAdvisorChat = () => {
     setShowAdvisorChat(true);
-    setShowAIChat(false);
-  };
-
-  const openAIChat = () => {
-    setShowAIChat(true);
-    setShowAdvisorChat(false);
   };
 
   return (
@@ -27,8 +20,11 @@ const HomePage = () => {
         {/* Background components */}
         <StarsBackground />
         <ShootingStars />
-
+        
+        {/* Spline Background */}
         <Spline scene="https://prod.spline.design/FCZhv3YVl9owsSJk/scene.splinecode" />
+        
+        {/* Hero content overlay */}
         <div className="hero-content">
           <h1>Welcome to Agri-Finance Platform</h1>
           <p>Your trusted partner in agricultural financial growth and success.</p>
@@ -37,9 +33,9 @@ const HomePage = () => {
             <button className="btn-appointment" onClick={openAdvisorChat}>
               Chat with Advisor
             </button>
-            <button className="btn-chat" onClick={openAIChat}>
+            <Link to="/aichat" className="btn-chat">
               Chat with AI
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -122,9 +118,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Conditional rendering of the Chat components */}
+      {/* Conditional rendering of the Advisor Chat */}
       {showAdvisorChat && <AdvisorChat />}
-      {showAIChat && <AIChat />}
     </div>
   );
 };

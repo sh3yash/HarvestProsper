@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import './ConsultPage.css'; // Create and style this CSS file as needed.
-import consultImage from '../assets/images/consultation.jpg'; // Replace with the correct image path
+import './ConsultPage.css';
+import Spline from '@splinetool/react-spline';
 
 const ConsultPage = () => {
   const [startDate, setStartDate] = useState(null);
@@ -19,7 +19,6 @@ const ConsultPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process the form data (e.g., send to server or log to console)
     console.log('Appointment booked:', formData, startDate);
   };
 
@@ -29,9 +28,9 @@ const ConsultPage = () => {
       <p>Book an appointment with our financial experts to discuss your farming finance needs.</p>
       
       <div className="consultation-content">
-        {/* Left Section: Image */}
-        <div className="consultation-image">
-          <img src={consultImage} alt="Consultation" />
+        {/* Left Section: 3D Model with Spline */}
+        <div className="consultation-spline">
+          <Spline scene="https://prod.spline.design/alEU9ank5gZUHys8/scene.splinecode" />
         </div>
 
         {/* Right Section: Form */}

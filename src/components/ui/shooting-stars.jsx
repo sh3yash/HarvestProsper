@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import { cn } from "../../lib/utils";
 import React, { useEffect, useState, useRef } from "react";
 
@@ -19,6 +19,7 @@ const getRandomStartPoint = () => {
       return { x: 0, y: 0, angle: 45 };
   }
 };
+
 export const ShootingStars = ({
   minSpeed = 5,
   maxSpeed = 15,
@@ -93,8 +94,11 @@ export const ShootingStars = ({
   }, [star]);
 
   return (
-    <div className="stars-background" style={{ pointerEvents: 'none' }}>
-    (<svg ref={svgRef} className={cn("w-full h-full absolute inset-0", className)}>
+    <svg
+      ref={svgRef}
+      className={cn("w-full h-full absolute inset-0", className)}
+      style={{ pointerEvents: "none" }} // Prevent pointer events on the SVG
+    >
       {star && (
         <rect
           key={star.id}
@@ -105,7 +109,8 @@ export const ShootingStars = ({
           fill="url(#gradient)"
           transform={`rotate(${star.angle}, ${
             star.x + (starWidth * star.scale) / 2
-          }, ${star.y + starHeight / 2})`} />
+          }, ${star.y + starHeight / 2})`}
+        />
       )}
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -113,7 +118,6 @@ export const ShootingStars = ({
           <stop offset="100%" style={{ stopColor: starColor, stopOpacity: 1 }} />
         </linearGradient>
       </defs>
-    </svg>)
-    </div>
+    </svg>
   );
 };
