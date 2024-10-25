@@ -14,7 +14,6 @@ import AIChat from './pages/AIChat';
 import ConsultPage from './pages/ConsultPage';
 import AdvisorChat from './pages/AdvisorChat';
 
-import { ShootingStarsAndStarsBackgroundDemo } from './pages/ShootingStarsAndStarsBackgroundDemo';
 
 
 
@@ -36,7 +35,6 @@ function App() {
           <Route path="/aichat" element={<AIChat/>} />  
           <Route path="/consultpage" element={<ConsultPage/>} />  
           <Route path="/advisorchat" element={<AdvisorChat/>} />
-          <Route path="/starsdemo"  element={<ShootingStarsAndStarsBackgroundDemo/>}/>
 
 
 
