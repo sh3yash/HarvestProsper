@@ -7,8 +7,9 @@
   position: fixed; /* Fixed position */
   top: 0;
   width: 100%;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensure navbar is above other content */
+  background: transparent; /* Fully transparent background */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 /* Logo size adjustment */
@@ -17,26 +18,13 @@
   height: auto;
 }
 
-/* Pseudo-element for blurred background */
-.navbar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-  backdrop-filter: blur(10px); /* Blur effect */
-  z-index: -1; /* Place behind other content */
-}
-
 /* Logo on the extreme left */
 .nav-logo {
   flex: 1;
 }
 
 .nav-logo a {
-  color: #fff;
+  color: #fff; /* White color for logo */
   font-size: 1.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -58,7 +46,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* White color for links */
   font-size: 1.1rem;
   font-weight: 500;
   padding: 10px 15px;
@@ -78,7 +66,7 @@
   display: block;
   width: 0;
   height: 2px;
-  background: aqua;
+  background: aqua; /* Underline color */
   transition: width 0.3s;
   position: absolute;
   bottom: 0;
