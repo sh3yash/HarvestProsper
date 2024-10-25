@@ -4,6 +4,8 @@ import { FaQuoteLeft } from 'react-icons/fa';
 import AdvisorChat from './AdvisorChat';
 import AIChat from './AIChat';
 import Spline from '@splinetool/react-spline';
+import { ShootingStars } from '../components/ui/shooting-stars'; // Import ShootingStars
+import { StarsBackground } from '../components/ui/stars-background'; // Import StarsBackground
 
 const HomePage = () => {
   const [showAdvisorChat, setShowAdvisorChat] = useState(false);
@@ -22,7 +24,10 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <div className="hero-section">
-        {/* Spline Component as the background */}
+        {/* Background components */}
+        <StarsBackground />
+        <ShootingStars />
+
         <Spline scene="https://prod.spline.design/FCZhv3YVl9owsSJk/scene.splinecode" />
         <div className="hero-content">
           <h1>Welcome to Agri-Finance Platform</h1>
@@ -73,7 +78,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Events Section */}
+      {/* Upcoming Events Section */}
       <div className="section events-section">
         <h2>Upcoming Events</h2>
         <div className="cards-container">

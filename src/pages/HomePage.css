@@ -1,14 +1,15 @@
 /* General Styling */
 .homepage {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
   background-color: #000000;
+  font-size: 16px;
 }
 
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 600px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,13 +23,13 @@
 }
 
 .hero-section h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 10px;
   color: #03a9f4;
 }
 
 .hero-section p {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-bottom: 20px;
   color: #b0b0b0;
 }
@@ -39,84 +40,85 @@
   gap: 20px;
 }
 
-.btn-appointment, .btn-chat {
-  padding: 10px 20px;
+.btn-appointment,
+.btn-chat {
+  padding: 12px 25px;
   background-color: #03a9f4;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1em;
 }
 
-.btn-appointment:hover, .btn-chat:hover {
+.btn-appointment:hover,
+.btn-chat:hover {
   background-color: #0288d1;
 }
 
 /* Section Styling */
 .section {
-  padding: 50px 0;
+  padding: 60px 0;
   text-align: center;
   background-color: #000000;
   color: #e0e0e0;
+}
+
+/* Section Heading Styling */
+.section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #03a9f4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.section h2:hover {
+  color: #0288d1;
 }
 
 /* Cards Container */
 .cards-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
-.card {
+.card,
+.testimonial-card {
   background: linear-gradient(145deg, #1a1a1a, #333333);
-  padding: 25px;
+  padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   width: 300px;
+  height: 250px;
   transition: transform 0.3s, box-shadow 0.3s;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card:hover {
+.card:hover,
+.testimonial-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
 }
 
-.card h3 {
+.card h3,
+.testimonial-card h3 {
   margin-bottom: 12px;
   color: #03a9f4;
   font-weight: bold;
+  font-size: 1.5em;
 }
 
-.card p {
+.card p,
+.testimonial-card p {
   color: #c0c0c0;
-}
-
-/* About Section */
-.about-section {
-  background-color: #000000;
-  padding: 50px;
-  color: #e0e0e0;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #b0b0b0;
-}
-
-.about-content p {
-  margin-bottom: 20px;
-}
-
-/* Events Section */
-.events-section {
-  background-color: #000000;
-}
-
-.events-section h2 {
-  color: #03a9f4;
+  flex-grow: 1;
 }
 
 /* Testimonials Section */
@@ -126,25 +128,20 @@
 
 .testimonial-cards {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.testimonial-card {
-  background: linear-gradient(145deg, #1a1a1a, #333333);
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  color: #e0e0e0;
-}
-
 .quote-icon {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #03a9f4;
+  margin-bottom: 10px;
 }
 
-.testimonial-card p {
-  color: #c0c0c0;
+/* Updated Styling for Why Choose Us and Events Sections */
+.why-choose-us,
+.events-section {
+  background-color: #000000;
 }

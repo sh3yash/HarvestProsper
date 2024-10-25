@@ -93,6 +93,7 @@ export const ShootingStars = ({
   }, [star]);
 
   return (
+    <div className="stars-background" style={{ pointerEvents: 'none' }}>
     (<svg ref={svgRef} className={cn("w-full h-full absolute inset-0", className)}>
       {star && (
         <rect
@@ -113,5 +114,6 @@ export const ShootingStars = ({
         </linearGradient>
       </defs>
     </svg>)
+    </div>
   );
 };
