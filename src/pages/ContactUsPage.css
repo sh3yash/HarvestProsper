@@ -1,15 +1,18 @@
 /* Main Container */
 .contact-page-container {
-  padding: 20px;
+  padding: 30px; /* Increased padding */
   background-color: #000; /* Black background for the main page */
   color: #f0f0f0; /* Light text color for contrast */
+  font-family: 'Arial', sans-serif; /* Font family for better readability */
 }
 
 /* Section Headings */
 .section-heading {
   color: #f0f0f0;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Increased margin */
+  font-size: 2em; /* Increased font size */
+  font-weight: bold; /* Bold font weight */
 }
 
 /* Card Group Styling */
@@ -23,48 +26,50 @@
 .info-card {
   background-color: #000; /* Black background for cards */
   color: #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); /* White shadow for visibility */
-  padding: 20px;
-  margin: 10px;
-  width: 250px;
+  border-radius: 10px; /* Slightly increased border radius */
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2); /* Increased shadow for visibility */
+  padding: 25px; /* Increased padding */
+  margin: 15px; /* Increased margin */
+  width: 300px; /* Slightly increased width */
   text-align: center;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* Shadow on hover */
+  transform: translateY(-6px); /* Increased lift on hover */
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3); /* Shadow on hover */
 }
 
 /* Card Image */
 .card-image {
   width: 100%;
-  height: 150px;
+  height: 160px; /* Increased height */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px; /* Slightly increased border radius */
   opacity: 0.85;
-  margin-bottom: 10px;
+  margin-bottom: 12px; /* Increased margin */
 }
 
 /* Card Icon */
 .card-icon {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 30px;
+  top: 15px; /* Adjusted position */
+  left: 15px; /* Adjusted position */
+  font-size: 32px; /* Increased icon size */
   color: #4dabf7; /* Blue for better contrast */
 }
 
 /* Card Title and Description */
 .card-title {
-  margin-top: 10px;
-  font-size: 1.2em;
+  margin-top: 12px; /* Increased margin */
+  font-size: 1.5em; /* Increased font size */
+  font-weight: bold; /* Bold font weight */
 }
 
 .card-description {
-  margin-top: 10px;
+  margin-top: 12px; /* Increased margin */
+  font-size: 1em; /* Slightly increased font size */
 }
 
 /* Toggle Button */
@@ -72,10 +77,11 @@
   background-color: #4dabf7;
   color: #000;
   border: none;
-  border-radius: 5px;
-  padding: 8px 15px;
+  border-radius: 6px; /* Slightly increased border radius */
+  padding: 10px 18px; /* Increased padding */
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 12px; /* Increased margin */
+  font-size: 1em; /* Increased font size */
   transition: background-color 0.3s;
 }
 
@@ -85,42 +91,44 @@
 
 /* Contact Form Container */
 .contact-form-container {
-  margin-top: 40px;
+  margin-top: 50px; /* Increased margin */
   text-align: center;
   background-color: #000; /* Black background for the contact form */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.2); /* Add box shadow */
+  padding: 25px; /* Increased padding */
+  border-radius: 10px; /* Slightly increased border radius */
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.2); /* Increased box shadow */
   transition: box-shadow 0.3s;
 }
 
 .contact-form-container:hover {
-  box-shadow: 0 8px 36px rgba(255, 255, 255, 0.3); /* Shadow on hover */
+  box-shadow: 0 10px 50px rgba(255, 255, 255, 0.3); /* Shadow on hover */
 }
 
 .contact-form {
-  max-width: 600px;
+  max-width: 650px; /* Increased max width */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
+/* Form Field Styling */
 .form-field {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increased margin */
 }
 
 label {
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Increased margin */
   color: #f0f0f0;
+  font-size: 1.1em; /* Increased font size */
 }
 
 input,
 textarea {
-  padding: 10px;
+  padding: 12px; /* Increased padding */
   border: 1px solid #4dabf7;
-  border-radius: 5px;
+  border-radius: 6px; /* Slightly increased border radius */
   width: 100%;
-  font-size: 16px;
+  font-size: 1em; /* Increased font size */
   background-color: #333;
   color: #f0f0f0;
 }
@@ -134,9 +142,10 @@ textarea {
   background-color: #4dabf7;
   color: #000;
   border: none;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 6px; /* Slightly increased border radius */
+  padding: 12px; /* Increased padding */
   cursor: pointer;
+  font-size: 1.1em; /* Increased font size */
   transition: background-color 0.3s;
 }
 
@@ -146,6 +155,6 @@ textarea {
 
 /* Map Container */
 .map-container {
-  margin-top: 40px;
+  margin-top: 50px; /* Increased margin */
   text-align: center;
 }
