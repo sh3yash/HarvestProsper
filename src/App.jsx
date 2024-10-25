@@ -13,6 +13,8 @@ import Consultation from './pages/Consultation';
 import AIChat from './pages/AIChat';
 import ConsultPage from './pages/ConsultPage';
 import AdvisorChat from './pages/AdvisorChat';
+import { ShootingStars } from './components/ui/shooting-stars';
+import { StarsBackground } from './components/ui/stars-background';
 
 
 
@@ -21,6 +23,9 @@ import AdvisorChat from './pages/AdvisorChat';
 function App() {
   return (
     <Router>
+      <div className="relative min-h-screen overflow-hidden bg-neutral-900">
+        <ShootingStars />
+        <StarsBackground />
       <div className="App">
         <Navbar />
         <Routes>
@@ -40,6 +45,7 @@ function App() {
 
         </Routes>
         <Footer />
+      </div>
       </div>
     </Router>
   );
