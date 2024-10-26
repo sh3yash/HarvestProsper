@@ -18,6 +18,7 @@ import { StarsBackground } from "./components/ui/stars-background";
 import Loans from "./pages/Loans";
 import Finance from "./pages/Finance";
 import SignupPage from "./pages/SignupPage";
+import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/loan" element={<Loans/>} />
             <Route path="/finances" element={<Finance/>} />
             <Route path="/signup" element={<SignupPage/>}/>
+            <Route path="resources" element={<Resources/>} />
           </Routes>
           <Footer />
         </div>

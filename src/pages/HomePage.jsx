@@ -26,7 +26,7 @@ const HomePage = () => {
         
         {/* Hero content overlay */}
         <div className="hero-content">
-          <h1>Welcome to Agri-Finance Platform</h1>
+          <h1>Welcome to Harvest-Prosper</h1>
           <p>Your trusted partner in agricultural financial growth and success.</p>
 
           <div className="buttons">

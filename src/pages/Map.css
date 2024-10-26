@@ -1,0 +1,16 @@
+.map-container {
+    text-align: center; /* Center the map title */
+    margin: 0; /* Remove margin for full-width effect */
+    padding: 0; /* Optional: Remove padding if any */
+}
+
+.map-title {
+    font-size: 1.8em; /* Font size for the title */
+    color: #00FFFF; /* Aqua Blue color for the title */
+    margin-bottom: 10px; /* Margin below title */
+}
+
+iframe {
+    border-radius: 8px; /* Rounded corners for the iframe */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Box shadow for the iframe */
+}
